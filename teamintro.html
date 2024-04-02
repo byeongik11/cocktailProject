@@ -11,8 +11,8 @@
             width: 70px;
             height: 70px;
             background-color: green;
-            
-            
+
+
             background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0_60ErDoAcIcGwIIi3cD9wTc5QuivjgngbEEQdRaonvkIdMbZbbgAKi-Lfgyem8z7n6k&usqp=CAU);
             background-position: center;
             background-size: cover;
@@ -21,7 +21,7 @@
         .header {
             top: 0px;
             left: 0px;
-            width: 1900px;
+            width: 100%;
             height: 96px;
             background-color: #c8edfd;
             border-bottom: 1px solid #c1c1c1;
@@ -45,67 +45,83 @@
             text-align: center;
         }
 
+        .mebermain{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+           
+        }
+
         .meber2 {
             margin: 30px auto 0px auto;
-  width: 200px;
-  height: 187px;
-  border-radius: 10000px;
-  background-image: url();
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+            width: 200px;
+            height: 187px;
+            border-radius: 10000px;
+            background-image: url();
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
 
         .mainimage {
             margin: 30px auto 0px auto;
-  width: 450px;
-  height: 400px;
-  border-radius: 1000px;
-  border: 1px solid #505050;
-  box-sizing: border-box;
-  background-image: url(https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FApUIo%2FbtsGjPDkNsh%2FfI7eViTO0JhhLEj6EayhFK%2Fimg.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
+            width: 450px;
+            height: 400px;
+            border-radius: 1000px;
+            border: 1px solid #505050;
+            box-sizing: border-box;
+            background-image: url(https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FApUIo%2FbtsGjPDkNsh%2FfI7eViTO0JhhLEj6EayhFK%2Fimg.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
     </style>
 </head>
 
 <body>
     <header class=" header">
-        <div class="headtext">Sping Java 5기</div>
+        <div class="headtext">Spring Java 5기</div>
     </header>
     <h1 class="teamName">
-        <div > <img class="icon" src= https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2UQ0RieM_rPh5jKzbUKMDjF6nCxbpm0Dpnw&s 
-            alt=""> 한잔해(17조)</div>
-    
+        <div> <img class="icon"
+                src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2UQ0RieM_rPh5jKzbUKMDjF6nCxbpm0Dpnw&s alt="">
+            한잔해(17조)</div>
+
     </h1>
     <h2 class="mainimage"> </h2>
-
-    <ul class="list-group list-group-horizontal">
-        <li class="list-group-item">팀장</li>
-        <li class="list-group-item">이병익</li>
-        <li class="list-group-item">INTP</li>
-    </ul>
-    <ul class="list-group list-group-horizontal-sm">
-        <img class="meber2" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc0Mgj9%2FbtsGjCKZVp9%2F0aysSjEaXq2Kdxd3lYjCI1%2Fimg.jpg" alt="정근사진">
-        <li class="list-group-item">팀원</li>
-        <li class="list-group-item">류정근</li>
-        <li class="list-group-item">INTP</li>
-    </ul>
-    <ul class="list-group list-group-horizontal-md">
-        <li class="list-group-item">팀원</li>
-        <li class="list-group-item">조성훈</li>
-        <li class="list-group-item">INTP</li>
-    </ul>
-    </ul>
-    <ul class="list-group list-group-horizontal-md">
-        <li class="list-group-item">팀원</li>
-        <li class="list-group-item">김지환</li>
-        <li class="list-group-item">ISFJ</li>
-    </ul>
-
+    <div class="mebermain">
+        <ul class="list-group list-group-horizontal">
+            <img class="meber2" src  ="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc0Mgj9%2FbtsGjCKZVp9%2F0aysSjEaXq2Kdxd3lYjCI1%2Fimg.jpg"
+             alt="병익사진">
+            <li class="list-group-item">팀장</li>
+            <li class="list-group-item">이병익</li>
+            <li class="list-group-item">INTP</li>
+        </ul>
+        <ul class="list-group list-group-horizontal-sm">
+            <img class="meber2"
+                src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc0Mgj9%2FbtsGjCKZVp9%2F0aysSjEaXq2Kdxd3lYjCI1%2Fimg.jpg"
+                alt="정근사진">
+            <li class="list-group-item">팀원</li>
+            <li class="list-group-item">류정근</li>
+            <li class="list-group-item">INTP</li>
+        </ul>
+        <ul class="list-group list-group-horizontal-md">
+            <img class="meber2" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc0Mgj9%2FbtsGjCKZVp9%2F0aysSjEaXq2Kdxd3lYjCI1%2Fimg.jpg"
+            alt="성훈사진">
+            <li class="list-group-item">팀원</li>
+            <li class="list-group-item">조성훈</li>
+            <li class="list-group-item">INTP</li>
+        </ul>
+        </ul>
+        <ul class="list-group list-group-horizontal-md">
+            <img class="meber2" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc0Mgj9%2FbtsGjCKZVp9%2F0aysSjEaXq2Kdxd3lYjCI1%2Fimg.jpg"
+            alt="지환사진">
+            <li class="list-group-item">팀원</li>
+            <li class="list-group-item">김지환</li>
+            <li class="list-group-item">ISFJ</li>
+        </ul>
+    </div>
 </body>
 
 </html>
