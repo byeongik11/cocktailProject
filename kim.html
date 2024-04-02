@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <title>한잔해</title>
+    <style>
+        .header {
+            top: 0px;
+            left: 0px;
+            width: 1440px;
+            height: 50px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #c1c1c1;
+            box-sizing: border-box;
+        }    
+        .text {
+            display: inline;
+            font-family: "Nanum Gothic", sans-serif;
+            color: #030303;
+            font-weight: 500;
+            margin-bottom: 10px;
+            margin-right: 10px;
+        }
+        .input {
+            top: 330px;
+            left: 250px;
+            width: 330px;
+            height: 40px;
+            padding: 0px 8px;
+            border: 0;
+            box-sizing: border-box;
+            background-color: #eeeeee;
+            color: #030303;
+            font-size: 14px;
+            font-family: "Nanum Gothic", sans-serif;
+            line-height: 19px;
+            outline: none;
+        }
+        .button {
+            cursor: pointer;
+            top: 565px;
+            left: 250px;
+            width: 330px;
+            height: 40px;
+            padding: 0px 8px;
+            border: black 1px solid;
+            border-radius: 0;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            color: #030303;
+            font-size: 16px;
+            font-family: "Nanum Gothic", sans-serif;
+            font-weight: 500;
+            letter-spacing: 1px;
+            line-height: 15px;
+            text-transform: uppercase;
+            outline: none;
+        }
+        .image-container {
+            top: 330px;
+            left: 840px;
+            width: 350px;
+            height: 410px;
+        }
+        
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="text">한잔해</h1>
+        <h2 class="text">Home</h2>
+        <h2 class="text">About</h2>
+        <h2 class="text">Conta</h2>
+    </div>
+    <div class="input-container">
+        <h1 class="text">칵테일 선택</h1>
+        <input type="text" class="input" placeholder="Input Field">
+    </div>
+    <div class="input-container">
+        <h1 class="text">조합 액체 선택</h1>
+        <input type="text" class="input" placeholder="Input Field">
+    </div>
+    <div class="input-container">
+        <h1 class="text">도수(강 중 약)</h1>
+        <input type="text" class="input" placeholder="Input Field">
+    </div>
+    <button class="button">ADD COCKTAIL</button>
+    <div class="image"></div>
+</body>
+</html>
