@@ -11,10 +11,22 @@
         @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
         @import "https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css";
 
- 
-        .card-body {
-            margin-: center;
+
+        .listName {
+            color: #000000;
+            font-size: 20px;
+            font-family: "Roboto";
+            font-weight: 600;
+            line-height: 32px;
+            margin: 20px;
+            text-align: center;
+            
         }
+
+        .card-body {
+            margin: center;
+        }
+
         .card-img-top {
             height: 15rem;
             object-fit: cover;
@@ -59,7 +71,6 @@
             background-color: transparent;
             color: white;
         }
-
     </style>
 </head>
 
@@ -86,6 +97,9 @@
             </div>
         </div>
     </nav>
+    <div class="listName">
+        <h1>Cocktail List</h1>
+    </div>
 
     <div class="mycards">
         <div id="card" class="row row-cols-1 row-cols-md-4 g-4">
@@ -115,7 +129,7 @@
                         class="card-img-top" alt="">
                     <div class="card-body">
                         <h5 class="card-title">칵테일 이름</h5>
-                        
+
                         <!-- <p class="card-text">영화 코멘트</p> -->
                     </div>
                 </div>
@@ -126,7 +140,7 @@
                         class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">칵테일 이름</h5>
-                       
+
                         <!-- <p class="card-text">영화 코멘트</p> -->
                     </div>
                 </div>
