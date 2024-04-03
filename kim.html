@@ -86,6 +86,36 @@
             align-items: left;
             margin-bottom: 20px;
         }
+
+        .flex-container{
+            display: flex;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            margin:5px;
+            text-align: center;
+        }
+        .flex-container.space-evenly{justify-content: space-evenly;}
+
+        .flex-item{
+            width: 100px;
+            height: 30px;
+            margin: 10px;
+            background-color: white;
+            font-family: "Nanum Gothic", sans-serif;
+            text-align: center;
+            font-size: 20px;
+        }
+        .flex-text{
+            width: 200px;
+            height: 50px;
+            margin: 10px;
+            background-color: white;
+            font-family: "Nanum Gothic", sans-serif;
+            text-align: center;
+            font-size: 15px;
+        }
+
     </style>
 </head>
 <body>
@@ -106,6 +136,21 @@
         </div>
     <div class="image"></div>
 
-    
+    <div class="flex-container space-evenly">
+        <div class="flex-item">칵테일 이름</div>
+        <div class="flex-item">도수 설명</div>
+        <div class="flex-item">맛 설명</div>
+    </div>
+
+    <div class="flex-container space-evenly">
+        <div class="flex-text">Find our offices around the world and feel free to pay us a visit!</div>
+        <div class="flex-text">Frederiksberg Nordhavn Sydhavn</div>
+        <div class="flex-text">Hackney Wick Brixton Elephant & Castle</div>
+    </div>
+
+    <div class="flex-container">
+        추천 안주
+    </div>
+
 </body>
 </html>
