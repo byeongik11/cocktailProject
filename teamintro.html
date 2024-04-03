@@ -7,6 +7,33 @@
     <title>팀원소개</title>
 
     <style>
+        .text{
+          margin-top: 10px;
+        }
+        .navytext {
+            cursor: pointer;
+            display: inline;
+            color: #030303;
+            font-weight: 500;
+            margin-left: 10px;
+            margin-bottom: 5px;
+            margin-right: 10px;
+        }
+        .navy {
+            display: flex;
+            flex-direction: row;
+            align-items: left;
+            justify-content: left;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 50px;
+            background-color: #ffffff;
+            border-bottom: 2px solid #c1c1c1;
+            box-sizing: border-box;
+        }
+        
+
         .icon {
             width: 70px;
             height: 70px;
@@ -19,21 +46,21 @@
         }
 
         .header {
-            top: 0px;
+            margin-top: 5px;
             left: 0px;
             width: 100%;
-            height: 96px;
+            height: 140px;
             background-color: #c8edfd;
             border-bottom: 1px solid #c1c1c1;
             box-sizing: border-box;
         }
- 
+
         .headtext {
             color: #030303;
             font-size: 64px;
             font-family: "Oswald";
             font-weight: 700;
-            line-height: 83px;
+            line-height: 130px;
             text-align: center;
         }
 
@@ -45,13 +72,13 @@
             text-align: center;
         }
 
-        .mebermain{
-           
+        .mebermain {
+
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
-           
+
         }
 
         .meberimage {
@@ -59,7 +86,7 @@
             width: 210px;
             height: 200px;
             border-radius: 10000px;
-           
+
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -77,32 +104,39 @@
             background-size: cover;
             background-repeat: no-repeat;
         }
-        .button {
-  cursor: pointer;
-  margin: 30px auto 0px auto;
-  width: 120px;
-  height: 36px;
-  padding: 0px 8px;
-  border: 1px solid #030303;
-  box-sizing: border-box;
-  background-color: #ffffff;
-  color: #030303;
-  font-size: 16px;
-  font-family: "Inter";
-  font-weight: 500;
-  letter-spacing: 1px;
-  line-height: 15px;
-  text-transform: uppercase; 
-  outline: none;
-}
 
+        .button {
+            cursor: pointer;
+            margin: 30px auto 0px auto;
+            width: 120px;
+            height: 36px;
+            padding: 0px 8px;
+            border: 1px solid #030303;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            color: #030303;
+            font-size: 16px;
+            font-family: "Inter";
+            font-weight: 500;
+            letter-spacing: 1px;
+            line-height: 15px;
+            text-transform: uppercase;
+            outline: none;
+        }
     </style>
 </head>
 
 <body>
+
+    <div class="navy">
+        <h1 class="text">한잔해</h1>
+        <h2 class="navytext" onclick="location.href='kim.html'" >Home</h2>
+        <h2 class="navytext" onclick="location.href='kim.html'" >cocktal</h2>
+        <h2 class="navytext" onclick="location.href='cocktailList.html'" >list</h2>
+    </div>
     <header class=" header">
         <div class="headtext">Spring Java 5기 </div>
-        <button type="button" class="button" onclick="location.href='kim.html'"> Main </button> 
+
     </header>
     <h1 class="teamName">
         <div> <img class="icon"
@@ -114,9 +148,9 @@
 
     <div class="mebermain">
         <ul class="member1">
-            <img class="meberimage" 
-            src ="https://github.com/byeongik11/cocktailProject/blob/main/%EC%9D%B4%EB%B3%91%EC%9D%B5.jpg?raw=true"
-             alt="병익사진">
+            <img class="meberimage"
+                src="https://github.com/byeongik11/cocktailProject/blob/main/%EC%9D%B4%EB%B3%91%EC%9D%B5.jpg?raw=true"
+                alt="병익사진">
             <li class="list-group-item">팀장</li>
             <li class="list-group-item">이병익</li>
             <li class="list-group-item">INTP</li>
@@ -130,18 +164,14 @@
             <li class="list-group-item">INTP</li>
         </ul>
         <ul class="member3">
-            <img class="meberimage" 
-            src=" https://ifh.cc/g/2gYktm.jpg"
-            alt="성훈사진">
+            <img class="meberimage" src=" https://ifh.cc/g/2gYktm.jpg" alt="성훈사진">
             <li class="list-group-item">팀원</li>
             <li class="list-group-item">조성훈</li>
             <li class="list-group-item">INTP</li>
         </ul>
         </ul>
         <ul class="member4">
-            <img class="meberimage" 
-            src="https://github.com/atimevil/Sparta/blob/main/image.png?raw=true"
-            alt="지환사진">
+            <img class="meberimage" src="https://github.com/atimevil/Sparta/blob/main/image.png?raw=true" alt="지환사진">
             <li class="list-group-item">팀원</li>
             <li class="list-group-item">김지환</li>
             <li class="list-group-item">ISFJ</li>
