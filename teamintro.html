@@ -27,7 +27,7 @@
             border-bottom: 1px solid #c1c1c1;
             box-sizing: border-box;
         }
-
+ 
         .headtext {
             color: #030303;
             font-size: 64px;
@@ -46,7 +46,7 @@
         }
 
         .mebermain{
-            background-color: green;
+           
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -55,9 +55,9 @@
         }
 
         .meberimage {
-            margin: 30px auto 0px auto;
-            width: 200px;
-            height: 187px;
+            margin: 30px 50px 0px auto;
+            width: 210px;
+            height: 200px;
             border-radius: 10000px;
            
             background-position: center center;
@@ -77,12 +77,32 @@
             background-size: cover;
             background-repeat: no-repeat;
         }
+        .button {
+  cursor: pointer;
+  margin: 30px auto 0px auto;
+  width: 120px;
+  height: 36px;
+  padding: 0px 8px;
+  border: 1px solid #030303;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  color: #030303;
+  font-size: 16px;
+  font-family: "Inter";
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 15px;
+  text-transform: uppercase; 
+  outline: none;
+}
+
     </style>
 </head>
 
 <body>
     <header class=" header">
-        <div class="headtext">Spring Java 5기</div>
+        <div class="headtext">Spring Java 5기 </div>
+        <button type="button" class="button" onclick="location.href='kim.html'"> Main </button> 
     </header>
     <h1 class="teamName">
         <div> <img class="icon"
@@ -95,7 +115,7 @@
     <div class="mebermain">
         <ul class="member1">
             <img class="meberimage" 
-            src ="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc0Mgj9%2FbtsGjCKZVp9%2F0aysSjEaXq2Kdxd3lYjCI1%2Fimg.jpg"
+            src ="https://github.com/byeongik11/cocktailProject/blob/main/%EC%9D%B4%EB%B3%91%EC%9D%B5.jpg?raw=true"
              alt="병익사진">
             <li class="list-group-item">팀장</li>
             <li class="list-group-item">이병익</li>
@@ -111,7 +131,7 @@
         </ul>
         <ul class="member3">
             <img class="meberimage" 
-            src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc0Mgj9%2FbtsGjCKZVp9%2F0aysSjEaXq2Kdxd3lYjCI1%2Fimg.jpg"
+            src=" https://ifh.cc/g/2gYktm.jpg"
             alt="성훈사진">
             <li class="list-group-item">팀원</li>
             <li class="list-group-item">조성훈</li>
@@ -120,13 +140,14 @@
         </ul>
         <ul class="member4">
             <img class="meberimage" 
-            src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc0Mgj9%2FbtsGjCKZVp9%2F0aysSjEaXq2Kdxd3lYjCI1%2Fimg.jpg"
+            src="https://github.com/atimevil/Sparta/blob/main/image.png?raw=true"
             alt="지환사진">
             <li class="list-group-item">팀원</li>
             <li class="list-group-item">김지환</li>
             <li class="list-group-item">ISFJ</li>
         </ul>
     </div>
+
 </body>
 
 </html>
