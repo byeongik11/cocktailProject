@@ -11,7 +11,7 @@
         .header {
             top: 0px;
             left: 0px;
-            width: 1440px;
+            width: 100%;
             height: 50px;
             background-color: #ffffff;
             border-bottom: 1px solid #c1c1c1;
@@ -25,10 +25,17 @@
             margin-bottom: 10px;
             margin-right: 10px;
         }
+        
+        .inputmain{
+            width: 500px;
+            margin: 20px auto 20px auto;
+            display: inline-block;
+        }
+
         .input {
             top: 330px;
             left: 250px;
-            width: 330px;
+            width: 500px;
             height: 40px;
             padding: 0px 8px;
             border: 0;
@@ -44,7 +51,7 @@
             cursor: pointer;
             top: 565px;
             left: 250px;
-            width: 330px;
+            width: 500px;
             height: 40px;
             padding: 0px 8px;
             border: black 1px solid;
@@ -59,20 +66,79 @@
             line-height: 15px;
             text-transform: uppercase;
             outline: none;
+            margin: 10px auto;
         }
-        .image-container {
+        .image {
             top: 330px;
             left: 840px;
             width: 350px;
-            height: 410px;
-        }
+            height: 450px;
+            background-image: url(https://img.freepik.com/free-photo/fresh-cocktails-with-ice-lemon-lime-fruits-generative-ai_188544-12370.jpg?size=626&ext=jpg&ga=GA1.1.1224184972.1712102400&semt=sph);
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: inline-block;
+            margin-left: 200px;
+          }
+          .image_2 {
+            top: 330px;
+            left: 840px;
+            width: 800px;
+            height: 450px;
+            background-image: url(https://img.freepik.com/free-photo/fresh-cocktails-with-ice-lemon-lime-fruits-generative-ai_188544-12370.jpg?size=626&ext=jpg&ga=GA1.1.1224184972.1712102400&semt=sph);
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: inline-block;
+            margin-top: 30px;
+          }
+          
         
         .input-container {
             display: flex;
             flex-direction: column;
             align-items: left;
             margin-bottom: 20px;
+            width:500px;
         }
+
+        .flex-container{
+            display: flex;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            margin:5px;
+            text-align: center;
+        }
+        .flex-container.space-evenly{justify-content: space-evenly;}
+
+        .flex-item{
+            width: 100px;
+            height: 30px;
+            margin: 10px;
+            background-color: white;
+            font-family: "Nanum Gothic", sans-serif;
+            text-align: center;
+            font-size: 20px;
+        }
+        .flex-text{
+            width: 200px;
+            height: 50px;
+            margin: 10px;
+            background-color: white;
+            font-family: "Nanum Gothic", sans-serif;
+            text-align: center;
+            font-size: 15px;
+            margin-bottom: 150px;
+        }
+        .recommend{
+            width: auto;
+            height: 100px;
+            margin: 10px;
+            font-family: "Nanum Gothic", sans-serif;
+            text-align: center;
+            font-size: 50px;
+        }
+        
+
     </style>
 </head>
 <body>
@@ -82,19 +148,35 @@
         <h2 class="text">About</h2>
         <h2 class="text">Conta</h2>
     </div>
-    <div class="input-container">
-        <h1 class="text">칵테일 선택</h1>
+    <div class="inputmain">
+        <h1 class="input-container">칵테일 선택</h1>
         <input type="text" class="input" placeholder="Input Field">
-    </div>
-    <div class="input-container">
-        <h1 class="text">조합 액체 선택</h1>
+        <h1 class="input-container">조합 액체 선택</h1>
         <input type="text" class="input" placeholder="Input Field">
-    </div>
-    <div class="input-container">
-        <h1 class="text">도수(강 중 약)</h1>
+        <h1 class="input-container">도수(강 중 약)</h1>
         <input type="text" class="input" placeholder="Input Field">
-    </div>
-    <button class="button">ADD COCKTAIL</button>
+        <button class="button">ADD COCKTAIL</button>
+        </div>
     <div class="image"></div>
+
+    <div class="flex-container space-evenly">
+        <div class="flex-item">칵테일 이름</div>
+        <div class="flex-item">도수 설명</div>
+        <div class="flex-item">맛 설명</div>
+    </div>
+
+    <div class="flex-container space-evenly">
+        <div class="flex-text">Find our offices around the world and feel free to pay us a visit!</div>
+        <div class="flex-text">Frederiksberg Nordhavn Sydhavn</div>
+        <div class="flex-text">Hackney Wick Brixton Elephant & Castle</div>
+    </div>
+
+    <div class="recommend">
+        <div class="recommend-text">
+            추천 안주
+    </div>
+
+    <div class="image_2"></div>
+
 </body>
 </html>
