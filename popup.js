@@ -11,7 +11,13 @@ document.getElementById('closePopup').addEventListener('click', function() {
 function getBaseType() {
     var obj = {
         "위스키" : {
-            'a' : '러스티 네일',
+            'a' : {
+                '10도 이하' ,
+                '10 ~ 20도' ,
+                '20 ~ 30도' ,
+                '30 ~ 40도' ,
+                '40도 이상' ,
+                }, 
             'b' : '올드 패션드',
             'c' : '뉴욕 사워'
         },
