@@ -227,17 +227,14 @@
             <label class=" input-containers-text" for="inputGroupselect01"></label>
             <select name = "Base_select" class="form-select" aria-label="Large select example">
                 <option selected>베이스 선택</option>
-                <option value="1">위스키</option>
-                <option value="2">진</option>
-                <option value="3">베이스1</option>
-                <option value="4">베이스2</option>
-                <option value="5">베이스3</option>
+                <option value="Whiskey">위스키</option>
+                <option value="Jin">진</option>
             </select>
         </div>
         <h1 class="input-container">도수 선택</h1>
         <div class="input-container">
             <label class=" input-containers-text" for="inputGroupselect02"></label>
-            <select class="form-select" onChange="Base_value(this.value)">
+            <select name = "alcohol_degree" class="form-select" onChange="Base_value(this.value)">
                 <option selected>도수 선택</option>
                 <option value="1">10도 이하</option>
                 <option value="2">10도 ~ 20도</option>

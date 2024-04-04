@@ -9,9 +9,13 @@ document.getElementById('closePopup').addEventListener('click', function() {
 });
 
 function Base_value(val){
-    if(val == "위스키"){
+    if(val == "Whiskey"){
         
-    } else if(val == "진"){
+    } else if(val == "Jin"){
 
     }
+}
+
+function alcohol_value(val){
+
 }
