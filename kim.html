@@ -225,7 +225,7 @@
         <h1 class="input-container">베이스 선택</h1>
         <div class="input-container">
             <label class=" input-containers-text" for="inputGroupselect01"></label>
-            <select class="form-select" aria-label="Large select example">
+            <select name = "Base_select" class="form-select" aria-label="Large select example">
                 <option selected>베이스 선택</option>
                 <option value="1">위스키</option>
                 <option value="2">진</option>
@@ -237,7 +237,7 @@
         <h1 class="input-container">도수 선택</h1>
         <div class="input-container">
             <label class=" input-containers-text" for="inputGroupselect02"></label>
-            <select class="form-select">
+            <select class="form-select" onChange="Base_value(this.value)">
                 <option selected>도수 선택</option>
                 <option value="1">10도 이하</option>
                 <option value="2">10도 ~ 20도</option>
@@ -260,7 +260,7 @@
             <button id="showPopup" class = "button">ADD COCKTAIL</button>
             <div id="popupContainer" class="popup-container">
                 <div class="popup">
-                    <span id="closePopup" class="close-btn">×</span>
+                    <span id="closePopup" class="close-btn">X</span>
                     <h2>칵테일 이름</h2>
                     <p>칵테일 설명</p>
                 </div>
@@ -290,5 +290,29 @@
         <div class="image_2"></div>
 
 </body>
+
+<table id = "Whiskey" width = "100%" style = "display: none">
+    <select name = "Base_select" class = "form-select">
+        <option selected>
+            <option value = "칵테일이름1">칵테일 이름</option>
+            <option value = "칵테일이름2">칵테일 이름</option>
+            <option value = "칵테일이름3">칵테일 이름</option>
+            <option value = "칵테일이름4">칵테일 이름</option>
+            <option value = "칵테일이름5">칵테일 이름</option>
+        </option>
+    </select>
+</table>
+
+<table id = "Jin" width = "100%" style = "display: none">
+    <select name = "Base_select" class = "form-select">
+        <option selected>
+            <option value = "칵테일이름1">칵테일 이름</option>
+            <option value = "칵테일이름2">칵테일 이름</option>
+            <option value = "칵테일이름3">칵테일 이름</option>
+            <option value = "칵테일이름4">칵테일 이름</option>
+            <option value = "칵테일이름5">칵테일 이름</option>
+        </option>
+    </select>
+</table>
 
 </html>
