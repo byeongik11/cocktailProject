@@ -18,6 +18,7 @@
             border-bottom: 1px solid #c1c1c1;
             box-sizing: border-box;
         }    
+
         .text {
             cursor: pointer;
             display: inline;
@@ -26,12 +27,11 @@
             font-weight: 500;
             margin-bottom: 10px;
             margin-right: 10px;
-            
         }
        
         
         .inputmain{
-            width: 500px;
+            width: 700px;
             display: inline-block;
             margin-left: 400px;
             margin-bottom: 50px;
@@ -74,6 +74,7 @@
             outline: none;
             margin: 10px auto;
         }
+
         .image {
             top: 330px;
             left: 840px;
@@ -83,9 +84,10 @@
             background-size: cover;
             background-repeat: no-repeat;
             display: inline-block;
-            margin-left: 200px;
+            margin-left: 50px;
             margin-top: 70px;
           }
+
           .image_2 {
             top: 330px;
             left: 840px;
@@ -98,9 +100,6 @@
             margin-top: 30px;
           }
 
-        
-          
-        
         .input-container {
             display: flex;
             flex-direction: column;
@@ -108,9 +107,9 @@
             margin-bottom: 20px;
             width:500px;
             justify-content: space-evenly;
+            border: white 1px solid;
         }
         
-
         .flex-container{
             display: flex;
             padding: 10px;
@@ -119,6 +118,7 @@
             margin-top : 20px;
             text-align: center;
         }
+        
         .flex-container.space-evenly{justify-content: space-evenly;}
 
         .flex-item{
@@ -130,6 +130,7 @@
             text-align: center;
             font-size: 20px;
         }
+
         .flex-text{
             width: 200px;
             height: 50px;
@@ -140,6 +141,7 @@
             font-size: 15px;
             margin-bottom: 150px;
         }
+        
         .recommend{
             width: auto;
             height: 100px;
@@ -161,9 +163,9 @@
     </div>
     <div class="inputmain">
         <h1 class="input-container">칵테일 선택</h1>
-        <div class="input-containers">
+        <div class="input-container">
             <label class=" input-containers-text" for = "inputGroupselect01"></label>
-            <select class="form-select">
+            <select class="form-select" aria-label="Large select example">
                 <option selected>칵테일 선택</option>
                 <option value="1">칵테일1</option>
                 <option value="2">칵테일2</option>
@@ -173,8 +175,8 @@
             </select>
         </div>
         <h1 class="input-container">조합 액체 선택</h1>
-        <div class="input-containers">
-            <label class=" input-containers-text" for = "inputGroupselect01"></label>
+        <div class="input-container">
+            <label class=" input-containers-text" for = "inputGroupselect02"></label>
             <select class="form-select">
                 <option selected>가니쉬</option>
                 <option value="1">가니쉬1</option>
@@ -185,8 +187,8 @@
             </select>
         </div>
         <h1 class="input-container">도수(강 중 약)</h1>
-        <div class="input-containers">
-            <label class=" input-containers-text" for = "inputGroupselect01"></label>
+        <div class="input-container">
+            <label class=" input-containers-text" for = "inputGroupselect03"></label>
             <select class="form-select">
                 <option selected>도수</option>
                 <option value="1">강(20도 이상)</option>
