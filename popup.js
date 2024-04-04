@@ -10,9 +10,11 @@ document.getElementById('closePopup').addEventListener('click', function() {
 
 function Base_value(val){
     if(val == "Whiskey"){
-        
+        //Whiskey.style.display = 'inline';
+        //Jin.style.display = 'none';
     } else if(val == "Jin"){
-
+        //Whiskey.style.display = 'none';
+        //Jin.style.display = 'inline';
     }
 }
 
