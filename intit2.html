@@ -6,7 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Document</title>
+    <title>칵테일 기록하기</title>
 </head>
 
     <style>
@@ -20,7 +20,7 @@
             background-color: green;
             color: white;
 
-            background-image: url('https://occ-0-1123-1217.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABeIfo7VL_VDyKnljV66IkR-4XLb6xpZqhpLSo3JUtbivnEW4s60PD27muH1mdaANM_8rGpgbm6L2oDgA_iELHZLZ2IQjG5lvp5d2.jpg?r=e6e.jpg');
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXsm3xKCZoiBfNFGx9IKvND5sZoOZP88i9Cg&s');
             background-position: center;
             background-size: cover;
         }
@@ -89,7 +89,7 @@
         $("#postingbtn").click(async function () {
             let cimage = $('#cimage').val();
             let cnmae = $('#cnmae').val();
-            let cbase = $('#cbase').val();
+            let base = $('#base').val();
             let ingredient = $('#ingredient').val();
             let taste = $('#taste').val();
             let recipe = $('#recipe').val();
@@ -97,7 +97,7 @@
             let doc = {
                 'cimage': cimage,
                 'cnmae': cnmae,
-                'cbase': cbase,
+                'base': base,
                 'ingredient': ingredient,
                 'taste': taste,
                 'recipe': recipe,
@@ -123,7 +123,7 @@
             let row = doc.data();
             let cimage = row['cimage']
             let cnmae = row['cnmae']
-            let cbase = row['cbase']
+            let base = row['base']
             let ingredient = row['ingredient']
             let taste = row['taste']
             let recipe = row['recipe']
@@ -162,24 +162,15 @@
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="#" class="nav-link px-2 text-danger">spartaflix</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">홈</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">시리즈</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">영화</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">내가 찜한 콘텐츠</a></li>
+                    <li><a href="#" class="nav-link px-2 text-danger">한잔해</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">메인</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">팀원소개</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">칵테일 만들기</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">칵테일 리스트</a></li>
                     <li><a href="#" class="nav-link px-2 text-white">현재 기온: <span id="temperature"> </span> </a></li>
 
                 </ul>
 
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
-                        aria-label="Search">
-                </form>
-
-                <div class="text-end">
-                    <button type="button" class="btn btn-outline-light me-2">Login</button>
-                    <button type="button" class="btn btn-danger">Sign-up</button>
-                </div>
             </div>
         </div>
     </header>
@@ -190,22 +181,22 @@
                 <p class="col-md-8 fs-4">
                     운영자 페이지임</p>
                 <button id="savebtn" type="button" class="btn btn-outline-light">칵테일기록하기</button>
-                <button type="button" class="btn btn-outline-light">상세정보</button>
+                
             </div>
         </div>
     </div>
 
     <div class="mypostingbox" id="postingbox">
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="cimage" placeholder="영화 이미지 주소">
+            <input type="email" class="form-control" id="cimage" placeholder="영화 이미지 주소">
             <label for="floatingInput">칵테일 이미지 주소</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="cnmae" placeholder="영화 제목">
+            <input type="email" class="form-control" id="cnmae" placeholder="영화 제목">
             <label for="floatingInput">칵테일 이름</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="base" placeholder="추천 이유">
+            <input type="email" class="form-control" id="base" placeholder="추천 이유">
             <label for="floatingInput">베이스 술</label>
         </div>
         <div class="form-floating mb-3">
@@ -213,15 +204,15 @@
             <label for="floatingInput">도수</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="ingredient" placeholder="추천 이유">
+            <input type="email" class="form-control" id="ingredient" placeholder="추천 이유">
             <label for="floatingInput">재료</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="taste" placeholder="추천 이유">
+            <input type="email" class="form-control" id="taste" placeholder="추천 이유">
             <label for="floatingInput">맛</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="recipe" placeholder="추천 이유">
+            <input type="email" class="form-control" id="recipe" placeholder="추천 이유">
             <label for="floatingInput">레시피</label>
         </div>
         <button id="postingbtn" type="button" class="btn btn-danger">기록하기</button>
