@@ -8,6 +8,14 @@ document.getElementById('closePopup').addEventListener('click', function () {
     document.getElementById('popupContainer').style.display = 'none';
 });
 
+async function fetchBoardDetail(condition) {
+    const querySnapshot = await getDocs(condition);
+    querySnapshot.forEach((doc) => {
+        setBoardData(doc.data());
+    });
+}
+
+
 function getBaseType() {
     var obj = {
         "위스키": {
