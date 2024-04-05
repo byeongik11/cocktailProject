@@ -20,7 +20,7 @@
             background-color: green;
             color: white;
 
-            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXsm3xKCZoiBfNFGx9IKvND5sZoOZP88i9Cg&s');
+            background-image: url('https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YmFyfGVufDB8fDB8fHww');
             background-position: center;
             background-size: cover;
         }
@@ -145,6 +145,10 @@
         $("#savebtn").click(async function () {
             $('#postingbox').toggle();
         })
+       
+        $("#hidebtn").click(async function () {
+            $('#card').toggle();
+        })
 
        
 
@@ -216,9 +220,10 @@
             <label for="floatingInput">레시피</label>
         </div>
         <button id="postingbtn" type="button" class="btn btn-danger">기록하기</button>
+        <button id="hidebtn" type="button" class="btn btn-outline-light">숨기기</button>
     </div>
     <div class="mycards">
-        <div id="card" class="row row-cols-1 row-cols-md-4 g-4">
+        <div id="card" class="row row-cols-1 row-cols-md-6 g-4">
         
         
         </div>
