@@ -380,4 +380,40 @@
 
 </script>
 
+<script>
+    // "ADD COCKTAIL" 버튼 클릭 시 실행되는 함수
+    $("#showPopup").click(async function () {
+        // 사용자가 선택한 이름 가져오기
+        const selectedName = document.querySelector("select[name='Cocktail_name']").value;
+
+        // Firebase에서 해당 칵테일 데이터 가져오기
+        const snapshot = await db.collection("cocktails")
+            .where("cname", "==", selectedName)
+            .get();
+
+        // 가져온 칵테일 데이터가 있을 경우에만 실행
+        if (!snapshot.empty) {
+            snapshot.forEach(doc => {
+                const data = doc.data();
+                // 칵테일 설명, 도수 설명, 맛 설명 화면에 업데이트
+                document.getElementById("cname").innerText = data.description;
+                document.getElementById("recipe").innerText = data.alcoholDescription;
+                document.getElementById("taste").innerText = data.tasteDescription;
+            });
+        } else {
+            // 가져온 칵테일 데이터가 없을 경우 처리
+            console.log("해당하는 칵테일이 없습니다.");
+        }
+
+        // 팝업 보이기
+        $("#popupContainer").show();
+    });
+
+    // 팝업 닫기 버튼 클릭 시 실행되는 함수
+    $("#closePopup").click(function () {
+        // 팝업 숨기기
+        $("#popupContainer").hide();
+    });
+</script>
+
 </html>

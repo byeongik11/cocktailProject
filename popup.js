@@ -16,6 +16,9 @@ async function fetchBoardDetail(condition) {
 }
 
 
+
+
+
 function getBaseType() {
     var obj = {
         "위스키": {
