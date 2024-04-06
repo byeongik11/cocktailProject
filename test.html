@@ -16,7 +16,8 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
+    <script src="test.js"></script>
+    <script src="common.js"></script>
 
 </head>
 
@@ -58,68 +59,72 @@
     </script>
 
     <script>
-        function ChangeValue() {
+        function ChangeValue_base() {
             var value_str = document.getElementById('base_value');
 
             alert("value:" + value_str.options[value_str.selectedIndex].value +
                 " text:" + value_str.options[value_str.selectedIndex].text);
         }
 
+        function ChangeValue_degree() {
+            var value_str = document.getElementById('degree_value');
+
+            alert("value:" + value_str.options[value_str.selectedIndex].value +
+                " text:" + value_str.options[value_str.selectedIndex].text);
+        }
+
+        function getName() {
+            var obj = {
+                "럼": {
+
+                },
+                "위스키": {
+
+                },
+                "진": {
+
+                },
+                "보드카": {
+
+                },
+                "데킬라": {
+
+                },
+                "브랜디": {
+
+                },
+                "소주": {
+
+                }
+
+            }
+            return obj;
+        }
+
     </script>
 
-
-
-    <div class="inputmain">
-        <h1 class="input-container">베이스 선택</h1>
-        <div class="input-container">
-            <label class=" input-containers-text" for="inputGroupselect01"></label>
-            <select name="Bases" id="Base_select" class="form-select" aria-label="Large select example">
-                <option value="" disabled selected>베이스를 선택해주세요</option>
-                <option value="Rum">럼</option>
-                <option value="Whiskey">위스키</option>
-                <option value="Jin">진</option>
-                <option value="Vodka">보드카</option>
-                <option value="Tequila">데킬라</option>
-                <option value="Brandy">브랜디</option>
-                <option value="Soju">소주</option>
+    <div class="box-body">
+        <h5>물품</h5>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-building"></i></span>
+            <select class="form-control" name="user_type">
+                <option value="">선택</option>
+                <option value="과일">과일</option>
+                <option value="생선">생선</option>
             </select>
         </div>
-        <h1 class="input-container">도수 선택</h1>
-        <div class="input-container">
-            <label class=" input-containers-text" for="inputGroupselect02"></label>
-            <select name="alcohol_degree" class="form-select" onChange="Base_value(this.value)">
-                <option selected>도수 선택</option>
-                <option value="1">10도 이하</option>
-                <option value="2">10도 ~ 20도</option>
-                <option value="3">20도 ~ 30도</option>
-                <option value="4">30도 ~ 40도</option>
-                <option value="5">40도 이상</option>
+        <h5>종류</h5>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-building"></i></span>
+            <select class="form-control" name="type">
+                <option value="">선택</option>
             </select>
         </div>
-        <h1 class="input-container">이름 선택</h1>
-        <div class="input-container">
-            <label class=" input-containers-text" for="inputGroupselect03"></label>
-            <select class="form-select">
-                <option selected>이름 선택</option>
-                <option value="1">이름1</option>
-                <option value="2">이름2</option>
-                <option value="3">이름3</option>
-            </select>
-        </div>
-
-        <body>
-            <button id="showPopup" class="button">ADD COCKTAIL</button>
-            <div id="popupContainer" class="popup-container">
-                <div class="popup">
-                    <span id="closePopup" class="close-btn">X</span>
-                    <h2>칵테일 이름</h2>
-                    <p>칵테일 설명</p>
-                </div>
-            </div>
-        </body>
     </div>
 
-    <select name="Bases" id="base_value" onchange="ChangeValue()">
+    </div>
+
+    <select name="bases" id="base_value" onchange="ChangeValue_base()">
         <option value="" disabled selected>베이스를 선택해주세요</option>
         <option value="1">럼</option>
         <option value="2">위스키</option>
@@ -129,6 +134,17 @@
         <option value="6">브랜디</option>
         <option value="7">소주</option>
     </select>
+
+    <select name="degree" id="degree_value" onchange="ChangeValue_degree()">
+        <option value="" disabled selected>도수를 선택해주세요</option>
+        <option value="1">10도 이하</option>
+        <option value="2">10도 ~ 20도</option>
+        <option value="3">20도 ~ 30도</option>
+        <option value="4">30도 ~ 40도</option>
+        <option value="5">40도 이상</option>
+    </select>
+
+
 
 </body>
 
