@@ -13,7 +13,7 @@
         @import "https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css";
 
 
-        .explanation{
+        .explanation {
             text-align: center;
         }
 
@@ -106,7 +106,6 @@
         }
     </style>
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -138,164 +137,255 @@
         <h1>Cocktail List</h1>
     </div>
 
-
-    <div class="mycards">
-        <div id="card" class="row row-cols-1 row-cols-md-4 g-4">
-            <div class="col">
-                <div class="card h-100">
-                    <button type="button" id="img1Btn">
-                        <img src="https://masileng-bucket.s3.ap-northeast-2.amazonaws.com/TB_COCK_MASTER/65.white_russian.jpg"
-                            class="card-img-top" alt="..." data-modal-id="modal1">
-                    </button>
-                    <div id="modal1" class="modal">
-                        <div class="modal-content">
-                          <span class="close">&times;</span>
-                          <div class="explanation">
-                            <h1>설명</h1>
-                          </div>
-                          <div class="text">
-                            <h1>칵테일 이름: 화이트 러시안( White Russian)</h1>
-                            <h1>베이스 술 : 보드카</h1>
-                            <h1>도수 : 23도</h1>
-                            <h1>재료 : 크림, 얼음, 커피 리류르, 보드카</h1>
-                            <h1>맛   : 처음 입을 대면 우유의 달콤함과 칼루아의 커피 향이 풍깁니다. 입안에서는 달콤하고 부드럽지만, 목으로 넘기는 순간 알코올 향이 올라옵니다.</h1>
-                            <h1>레시피: 1. 락글라스에 각얼음을 넣는다.</h1>
-                            <h1>       2. 얼음 위에 보드카 50ml, 커피 리큐르 30ml, 크림 30ml를 붓는다.</h1> 
-                            <h1>       3. 부드럽게 저어준다.</h1>
-                          </div>
+    <div class="container">
+        <div class="form-group">
+            <select name="Base_select" id="Base_select" class="form-select" aria-label="Large select example">
+                <option selected>베이스 선택</option>
+                <option value="Rum">럼</option>
+                <option value="Whiskey">위스키</option>
+                <option value="Jin">진</option>
+                <option value="Vodka">보드카</option>
+                <option value="Tequila">데킬라</option>
+                <option value="Brandy">브랜디</option>
+                <option value="Soju">소주</option>
+            </select>
+        </div>
+        <script src="selectBox.js"></script>
+        <div class="mycards">
+            <div id="card" class="row row-cols-1 row-cols-md-4 g-4">
+                <div class="col">
+                    <div class="card h-100" data-base="Jin">
+                        <button type="button" id="img1Btn">
+                            <img src="https://masileng-bucket.s3.ap-northeast-2.amazonaws.com/TB_COCK_MASTER/65.white_russian.jpg" class="card-img-top" alt="..." data-modal-id="modal1">
+                        </button>
+                        <div id="modal1" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <div class="explanation">
+                                    <h1>설명</h1>
+                                </div>
+                                <div class="text">
+                                    <h1>칵테일 이름: 화이트 러시안( White Russian)</h1>
+                                    <h1>베이스 술 : 보드카</h1>
+                                    <h1>도수 : 23도</h1>
+                                    <h1>재료 : 크림, 얼음, 커피 리류르, 보드카</h1>
+                                    <h1>맛 : 처음 입을 대면 우유의 달콤함과 칼루아의 커피 향이 풍깁니다. 입안에서는 달콤하고 부드럽지만, 목으로 넘기는 순간 알코올 향이
+                                        올라옵니다.</h1>
+                                    <h1>레시피: 1. 락글라스에 각얼음을 넣는다.</h1>
+                                    <h1> 2. 얼음 위에 보드카 50ml, 커피 리큐르 30ml, 크림 30ml를 붓는다.</h1>
+                                    <h1> 3. 부드럽게 저어준다.</h1>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                      <script src="cocktailModal.js"></script>
-                    <div class="card-body">
-                        <h5 class="card-title">칵테일 이름</h5>
-                        <p class="card-text">화이트 러시안( White Russian)</p> 
+                        <script src="cocktailModal.js"></script>
+                        <div class="card-body">
+                            <h5 class="card-title">칵테일 이름</h5>
+                            <p class="card-text">화이트 러시안( White Russian)</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="card h-100" data-base="Whiskey">
+                        <button type="button" id="img2">
+                            <img src="https://masileng-bucket.s3.ap-northeast-2.amazonaws.com/TB_COCK_MASTER/70.Roy Rogers.jpg"
+                                class="card-img-top" alt="..." data-modal-id="modal2">
+                        </button>
+                        <div id="modal2" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <div class="explanation">
+                                    <h1>설명</h1>
+                                </div>
+                                <div class="text">
+                                    <h1>칵테일 이름: 화이트 러시안( White Russian)</h1>
+                                    <h1>베이스 술 : 보드카</h1>
+                                    <h1>도수 : 23도</h1>
+                                    <h1>재료 : 크림, 얼음, 커피 리류르, 보드카</h1>
+                                    <h1>맛 : 처음 입을 대면 우유의 달콤함과 칼루아의 커피 향이 풍깁니다. 입안에서는 달콤하고 부드럽지만, 목으로 넘기는 순간 알코올 향이
+                                        올라옵니다.</h1>
+                                    <h1>레시피: 1. 락글라스에 각얼음을 넣는다.</h1>
+                                    <h1> 2. 얼음 위에 보드카 50ml, 커피 리큐르 30ml, 크림 30ml를 붓는다.</h1>
+                                    <h1> 3. 부드럽게 저어준다.</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <script src="cocktailModal.js"></script>
+                        <div class="card-body">
+                            <h5 class="card-title">칵테일 이름</h5>
+                            <!-- <p class="card-text">영화 코멘트</p> -->
+                        </div>
                     </div>
                 </div>
-
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <button type="button" id="img2">
-                        <img src="https://masileng-bucket.s3.ap-northeast-2.amazonaws.com/TB_COCK_MASTER/70.Roy Rogers.jpg"
-                            class="card-img-top" alt="..." data-modal-id="modal2" >
-                    </button>
-                    <div id="modal2" class="modal">
-                        <div class="modal-content">
-                          <span class="close">&times;</span>
-                          <h1>설명</h1>
+                <div class="col">
+                    <div class="card h-100" data-base="Rum">
+                        <button type="button" id="img3">
+                            <img src="https://masileng-bucket.s3.ap-northeast-2.amazonaws.com/TB_COCK_MASTER/69.Halla Tonic.jpg"
+                                class="card-img-top" alt="" data-modal-id="modal3">
+                        </button>
+                        <div id="modal3" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <div class="explanation">
+                                    <h1>설명</h1>
+                                </div>
+                                <div class="text">
+                                    <h1>칵테일 이름: 화이트 러시안( White Russian)</h1>
+                                    <h1>베이스 술 : 보드카</h1>
+                                    <h1>도수 : 23도</h1>
+                                    <h1>재료 : 크림, 얼음, 커피 리류르, 보드카</h1>
+                                    <h1>맛 : 처음 입을 대면 우유의 달콤함과 칼루아의 커피 향이 풍깁니다. 입안에서는 달콤하고 부드럽지만, 목으로 넘기는 순간 알코올 향이
+                                        올라옵니다.</h1>
+                                    <h1>레시피: 1. 락글라스에 각얼음을 넣는다.</h1>
+                                    <h1> 2. 얼음 위에 보드카 50ml, 커피 리큐르 30ml, 크림 30ml를 붓는다.</h1>
+                                    <h1> 3. 부드럽게 저어준다.</h1>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                    <script src="cocktailModal.js"></script>
-                    <div class="card-body">
-                        <h5 class="card-title">칵테일 이름</h5>
-                        <!-- <p class="card-text">영화 코멘트</p> -->
+                        <script src="cocktailModal.js"></script>
+                        <div class="card-body">
+                            <h5 class="card-title">칵테일 이름</h5>
+
+                            <!-- <p class="card-text">영화 코멘트</p> -->
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <button type="button" id="img3">
-                        <img src="https://masileng-bucket.s3.ap-northeast-2.amazonaws.com/TB_COCK_MASTER/69.Halla Tonic.jpg"
-                            class="card-img-top" alt="" data-modal-id="modal3">
-                    </button>
-                    <div id="modal3" class="modal">
-                        <div class="modal-content">
-                          <span class="close">&times;</span>
-                          <h1>설명</h1>
-                        </div>
-                      </div>
-                    <script src="cocktailModal.js"></script>
-                    <div class="card-body">
-                        <h5 class="card-title">칵테일 이름</h5>
-
-                        <!-- <p class="card-text">영화 코멘트</p> -->
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <button type="button" id="img4">
-                        <img src="https://masileng-bucket.s3.ap-northeast-2.amazonaws.com/TB_COCK_MASTER/65.white_russian.jpg""
+                <div class="col">
+                    <div class="card h-100" data-base="Rum">
+                        <button type="button" id="img4">
+                            <img src="https://masileng-bucket.s3.ap-northeast-2.amazonaws.com/TB_COCK_MASTER/65.white_russian.jpg"
                             class=" card-img-top" alt="..." data-modal-id="modal4">
-                    </button>
-                    <div id="modal4" class="modal">
-                        <div class="modal-content">
-                          <span class="close">&times;</span>
-                          <h1>설명</h1>
+                        </button>
+                        <div id="modal4" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <div class="explanation">
+                                    <h1>설명</h1>
+                                </div>
+                                <div class="text">
+                                    <h1>칵테일 이름: 화이트 러시안( White Russian)</h1>
+                                    <h1>베이스 술 : 보드카</h1>
+                                    <h1>도수 : 23도</h1>
+                                    <h1>재료 : 크림, 얼음, 커피 리류르, 보드카</h1>
+                                    <h1>맛 : 처음 입을 대면 우유의 달콤함과 칼루아의 커피 향이 풍깁니다. 입안에서는 달콤하고 부드럽지만, 목으로 넘기는 순간 알코올 향이
+                                        올라옵니다.</h1>
+                                    <h1>레시피: 1. 락글라스에 각얼음을 넣는다.</h1>
+                                    <h1> 2. 얼음 위에 보드카 50ml, 커피 리큐르 30ml, 크림 30ml를 붓는다.</h1>
+                                    <h1> 3. 부드럽게 저어준다.</h1>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                    <script src="cocktailModal.js"></script>
-                    <div class="card-body">
-                        <h5 class="card-title">칵테일 이름</h5>
+                        <script src="cocktailModal.js"></script>
+                        <div class="card-body">
+                            <h5 class="card-title">칵테일 이름</h5>
 
-                        <!-- <p class="card-text">영화 코멘트</p> -->
+                            <!-- <p class="card-text">영화 코멘트</p> -->
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <button type="button" id="img5">
-                        <img src="https://masileng-bucket.s3.ap-northeast-2.amazonaws.com/TB_COCK_MASTER/65.white_russian.jpg""
+                <div class="col">
+                    <div class="card h-100" data-base="Whiskey">
+                        <button type="button" id="img5">
+                            <img src="https://masileng-bucket.s3.ap-northeast-2.amazonaws.com/TB_COCK_MASTER/65.white_russian.jpg"
                             class=" card-img-top" alt="..." data-modal-id="modal5">
-                    </button>
-                    <div id="modal5" class="modal">
-                        <div class="modal-content">
-                          <span class="close">&times;</span>
-                          <h1>설명</h1>
+                        </button>
+                        <div id="modal5" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <div class="explanation">
+                                    <h1>설명</h1>
+                                </div>
+                                <div class="text">
+                                    <h1>칵테일 이름: 화이트 러시안( White Russian)</h1>
+                                    <h1>베이스 술 : 보드카</h1>
+                                    <h1>도수 : 23도</h1>
+                                    <h1>재료 : 크림, 얼음, 커피 리류르, 보드카</h1>
+                                    <h1>맛 : 처음 입을 대면 우유의 달콤함과 칼루아의 커피 향이 풍깁니다. 입안에서는 달콤하고 부드럽지만, 목으로 넘기는 순간 알코올 향이
+                                        올라옵니다.</h1>
+                                    <h1>레시피: 1. 락글라스에 각얼음을 넣는다.</h1>
+                                    <h1> 2. 얼음 위에 보드카 50ml, 커피 리큐르 30ml, 크림 30ml를 붓는다.</h1>
+                                    <h1> 3. 부드럽게 저어준다.</h1>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                    <script src="cocktailModal.js"></script>
-                    <div class="card-body">
-                        <h5 class="card-title">칵테일 이름</h5>
+                        <script src="cocktailModal.js"></script>
+                        <div class="card-body">
+                            <h5 class="card-title">칵테일 이름</h5>
 
-                        <!-- <p class="card-text">영화 코멘트</p> -->
+                            <!-- <p class="card-text">영화 코멘트</p> -->
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <button type="button" id="img6">
-                        <img src="https://masileng-bucket.s3.ap-northeast-2.amazonaws.com/TB_COCK_MASTER/65.white_russian.jpg""
+                <div class="col">
+                    <div class="card h-100" data-base="Whiskey">
+                        <button type="button" id="img6">
+                            <img src="https://masileng-bucket.s3.ap-northeast-2.amazonaws.com/TB_COCK_MASTER/65.white_russian.jpg"
                             class=" card-img-top" alt="..." data-modal-id="modal6">
-                    </button>
-                    <div id="modal6" class="modal">
-                        <div class="modal-content">
-                          <span class="close">&times;</span>
-                          <h1>설명</h1>
+                        </button>
+                        <div id="modal6" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <div class="explanation">
+                                    <h1>설명</h1>
+                                </div>
+                                <div class="text">
+                                    <h1>칵테일 이름: 화이트 러시안( White Russian)</h1>
+                                    <h1>베이스 술 : 보드카</h1>
+                                    <h1>도수 : 23도</h1>
+                                    <h1>재료 : 크림, 얼음, 커피 리류르, 보드카</h1>
+                                    <h1>맛 : 처음 입을 대면 우유의 달콤함과 칼루아의 커피 향이 풍깁니다. 입안에서는 달콤하고 부드럽지만, 목으로 넘기는 순간 알코올 향이
+                                        올라옵니다.</h1>
+                                    <h1>레시피: 1. 락글라스에 각얼음을 넣는다.</h1>
+                                    <h1> 2. 얼음 위에 보드카 50ml, 커피 리큐르 30ml, 크림 30ml를 붓는다.</h1>
+                                    <h1> 3. 부드럽게 저어준다.</h1>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                    <script src="cocktailModal.js"></script>
-                    <div class="card-body">
-                        <h5 class="card-title">칵테일 이름</h5>
+                        <script src="cocktailModal.js"></script>
+                        <div class="card-body">
+                            <h5 class="card-title">칵테일 이름</h5>
 
-                        <!-- <p class="card-text">영화 코멘트</p> -->
+                            <!-- <p class="card-text">영화 코멘트</p> -->
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <button type="button" id="img7">
-                        <img src="https://masileng-bucket.s3.ap-northeast-2.amazonaws.com/TB_COCK_MASTER/65.white_russian.jpg""
+                <div class="col">
+                    <div class="card h-100" data-base="Whiskey">
+                        <button type="button" id="img7">
+                            <img src="https://masileng-bucket.s3.ap-northeast-2.amazonaws.com/TB_COCK_MASTER/65.white_russian.jpg"
                             class=" card-img-top" alt="..." data-modal-id="modal7">
-                    </button>
-                    <div id="modal7" class="modal">
-                        <div class="modal-content">
-                          <span class="close">&times;</span>
-                          <h1>설명</h1>
+                        </button>
+                        <div id="modal7" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <div class="explanation">
+                                    <h1>설명</h1>
+                                </div>
+                                <div class="text">
+                                    <h1>칵테일 이름: 화이트 러시안( White Russian)</h1>
+                                    <h1>베이스 술 : 보드카</h1>
+                                    <h1>도수 : 23도</h1>
+                                    <h1>재료 : 크림, 얼음, 커피 리류르, 보드카</h1>
+                                    <h1>맛 : 처음 입을 대면 우유의 달콤함과 칼루아의 커피 향이 풍깁니다. 입안에서는 달콤하고 부드럽지만, 목으로 넘기는 순간 알코올 향이
+                                        올라옵니다.</h1>
+                                    <h1>레시피: 1. 락글라스에 각얼음을 넣는다.</h1>
+                                    <h1> 2. 얼음 위에 보드카 50ml, 커피 리큐르 30ml, 크림 30ml를 붓는다.</h1>
+                                    <h1> 3. 부드럽게 저어준다.</h1>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                    <script src="cocktailModal.js"></script>
-                    <div class="card-body">
-                        <h5 class="card-title">칵테일 이름</h5>
+                        <script src="cocktailModal.js"></script>
+                        <div class="card-body">
+                            <h5 class="card-title">칵테일 이름</h5>
 
-                        <!-- <p class="card-text">영화 코멘트</p> -->
-                        
+                            <!-- <p class="card-text">영화 코멘트</p> -->
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-   
+
 </body>
 
 </html>
