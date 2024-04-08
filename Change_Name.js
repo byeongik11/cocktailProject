@@ -12,7 +12,7 @@ function ChangeValue_name() {
         } else if (selectedDegree === "20") { // 10도 ~ 20도 선택
             resultOption.innerHTML = `
             <option value="Pinacolada">피나 콜라다</option>
-            <option value="Cuba Libre">쿠바 리브레</option>
+            <option value="CubaLibre">쿠바 리브레</option>
             <option value="Mohitto">모히또</option>
             `;
         } else if (selectedDegree === "30") { // 20도 ~ 30도 선택
@@ -157,6 +157,7 @@ function ChangeValue_name() {
         } else if (selectedDegree === "20") { // 10도 ~ 20도 선택
             resultOption.innerHTML = `
             <option value="Brandyeggnog">브랜디 에그노그</option>
+            <option value="Sangira">샹그리아</option>
             `;
         } else if (selectedDegree === "30") { // 20도 ~ 30도 선택
             resultOption.innerHTML = `
@@ -174,7 +175,7 @@ function ChangeValue_name() {
     } else if (selectedBase === "Soju") { // 소주 선택
         if (selectedDegree === "10") { // 20도 ~ 30도 선택
             resultOption.innerHTML = `
-            <option value="nopainnogain">고진감래주</option>
+            <option value="Nopainnogain">고진감래주</option>
             <option value="Hallatonic">한라토닉</option>
             <option value="Energyju">에너자이주</option>
             `;
