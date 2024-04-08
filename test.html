@@ -41,24 +41,31 @@
             measurementId: "G-JPECC8887X"
         };
 
+        firebase.initializeApp(firebaseConfig);
 
-        // Firebase 인스턴스 초기화
-        const app = initializeApp(firebaseConfig);
-        const dbs = getFirestore(app);
+        var db = firebase.firestore();
+
 
         // 데이터 읽기
         let docs = await getDocs(collection(dbs, "cocktails"));
         let outputDiv = document.getElementById("result");
 
-        docs.forEach((doc) => {
-            let row = doc.data();
-            // 화면에 데이터를 표시하기 위해 HTML 요소 생성
-            let cocktailDiv = document.createElement("div");
-            cocktailDiv.textContent = JSON.stringify(row);
-            outputDiv.appendChild(cocktailDiv);
-        });
+        function ChangeValue_name() {
+            var selectedName = document.getElementById("result_option").value;
 
-
+            db.collection("cocktails").where("cname", "==", selectedName)
+                .get()
+                .then(function (querySnapshot) {
+                    querySnapshot.forEach(function (doc) {
+                        var data = doc.data();
+                        var name = data.cname;
+                        var recipe = data.recipe
+                    });
+                })
+                .catch(function (error) {
+                    console.log("Error getting documents: ", error);
+                });
+        }
 
     </script>
 
@@ -98,7 +105,8 @@
         </div>
     </div>
 
-    <div id="result"></div>
+
+
 </body>
 
 
