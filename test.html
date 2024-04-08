@@ -41,31 +41,33 @@
             measurementId: "G-JPECC8887X"
         };
 
-        firebase.initializeApp(firebaseConfig);
 
-        var db = firebase.firestore();
+        // Firebase 인스턴스 초기화
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
 
-
-        // 데이터 읽기
-        let docs = await getDocs(collection(dbs, "cocktails"));
-        let outputDiv = document.getElementById("result");
-
-        function ChangeValue_name() {
-            var selectedName = document.getElementById("result_option").value;
-
-            db.collection("cocktails").where("cname", "==", selectedName)
-                .get()
-                .then(function (querySnapshot) {
-                    querySnapshot.forEach(function (doc) {
-                        var data = doc.data();
-                        var name = data.cname;
-                        var recipe = data.recipe
-                    });
-                })
-                .catch(function (error) {
-                    console.log("Error getting documents: ", error);
-                });
-        }
+        $("#showCocktail").click(async function () {
+            let docs = await getDocs(collection(db, "cocktails"));
+        
+            let selectedName = $('#result_option').val();
+        
+            docs.forEach((doc) => {
+                let data = doc.data();
+                let cnmae = data['cnmae'];
+        
+                if (cnmae === selectedName) {
+                    let taste = data['taste'];
+                    let recipe = data['recipe'];
+        
+                    $("#cockname").text(cnmae);
+                    $("#cocktaste").text(taste);
+                    $("#cockrecipe").text(recipe);
+        
+                    return;
+                }
+            });
+        });
+        
 
     </script>
 
@@ -105,7 +107,15 @@
         </div>
     </div>
 
+    <body>
+        <button id="showCocktail" class="button">ADD COCKTAIL</button>
+    </body>
 
+    <div class="flex-container space-evenly">
+        <div class="flex-item" id="cockname">칵테일 이름</div>
+        <div class="flex-item" id="cocktaste">맛 설명</div>
+        <div class="flex-item" id="cockrecipe">레시피 설명</div>
+    </div>
 
 </body>
 

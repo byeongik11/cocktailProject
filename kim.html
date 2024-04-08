@@ -229,15 +229,29 @@
 
         // Firebase 인스턴스 초기화
         const app = initializeApp(firebaseConfig);
-        const dbs = getFirestore(app);
+        const db = getFirestore(app);
 
-        //데이터 읽기
-        let docs = await getDocs(collection(dbs, "cocktails"));
-        docs.forEach((doc) => {
-            let row = doc.data();
-            console.log(row);
+        $("#showCocktail").click(async function () {
+            let docs = await getDocs(collection(db, "cocktails"));
+        
+            let selectedName = $('#result_option').val();
+        
+            docs.forEach((doc) => {
+                let data = doc.data();
+                let cnmae = data['cnmae'];
+        
+                if (cnmae === selectedName) {
+                    let taste = data['taste'];
+                    let recipe = data['recipe'];
+        
+                    $("#cockname").text(cnmae);
+                    $("#cocktaste").text(taste);
+                    $("#cockrecipe").text(recipe);
+        
+                    return;
+                }
+            });
         });
-
 
     </script>
 
@@ -308,7 +322,7 @@
         </div>
 
         <body>
-            <button id="showPopup" class="button">ADD COCKTAIL</button>
+            <button id="showCocktail" class="button">ADD COCKTAIL</button>
         </body>
     </div>
     <div class="image"></div>
@@ -320,9 +334,9 @@
     </div>
 
     <div class="flex-container space-evenly">
-        <div class="flex-text">Find our offices around the world and feel free to pay us a visit!</div>
-        <div class="flex-text">Frederiksberg Nordhavn Sydhavn</div>
-        <div class="flex-text">Hackney Wick Brixton Elephant & Castle</div>
+        <div class="flex-text" id="cockname"></div>
+        <div class="flex-text" id="cocktaste"></div>
+        <div class="flex-text" id="cockrecipe"></div>
     </div>
 
     <div class="recommend">
