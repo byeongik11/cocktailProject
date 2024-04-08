@@ -94,6 +94,8 @@
         let ingredient = $('#ingredient').val();
         let taste = $('#taste').val();
         let recipe = $('#recipe').val();
+        let dosu = $('#dosu').val();
+
 
         let doc = {
             'cimage': cimage,
@@ -131,6 +133,7 @@
         let ingredient = row['ingredient']
         let taste = row['taste']
         let recipe = row['recipe']
+        let dosu = row['dosu']
         // 저장된 변수 카드에 만들어 화면에 붙이기
         let temp_html = `
             <div class="col">
@@ -143,7 +146,8 @@
                 </div>
             </div>`;
         $('#card').append(temp_html);
-
+        
+        //쿼리
         let query = window.location.search.substr();
 
        //가져온 데이터 반복문으로 하나하나 빼보기
