@@ -233,8 +233,13 @@
 
         $("#showCocktail").click(async function () {
             let docs = await getDocs(collection(db, "cocktails"));
-        
+            
             let selectedName = $('#result_option').val();
+
+            if (!selectedName) {
+                alert("먼저 옵션을 선택해주세요.");
+                return;
+            }
         
             docs.forEach((doc) => {
                 let data = doc.data();
@@ -291,7 +296,7 @@
         <div class="input-container">
             <label class=" input-containers-text" for="inputGroupselect01"></label>
             <select class="form-control" name="user_type" id="base_value" onchange="ChangeValue_name()">
-                <option value="">베이스를 선택해주세요</option>
+                <option value ="" selected>베이스를 선택해주세요</option>
                 <option value="Rum">럼</option>
                 <option value="Whiskey">위스키</option>
                 <option value="Jin">진</option>
@@ -305,7 +310,7 @@
         <div class="input-container">
             <label class=" input-containers-text" for="inputGroupselect02"></label>
             <select class="form-control" name="degree" id="degree_value" onchange="ChangeValue_name()">
-                <option value="" disabled selected>도수를 선택해주세요</option>
+                <option value="" selected>도수를 선택해주세요</option>
                 <option value="10">10도 이하</option>
                 <option value="20">10도 ~ 20도</option>
                 <option value="30">20도 ~ 30도</option>
