@@ -16,6 +16,7 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="Change_Name.js"></script>
 
 
     <title>한잔해</title>
@@ -240,8 +241,22 @@
 
     </script>
 
+    <script>
+        function ChangeValue_base() {
+            var value_str = document.getElementById('base_value');
 
+            alert("value:" + value_str.options[value_str.selectedIndex].value +
+                " text:" + value_str.options[value_str.selectedIndex].text);
+        }
 
+        function ChangeValue_degree() {
+            var value_str = document.getElementById('degree_value');
+
+            alert("value:" + value_str.options[value_str.selectedIndex].value +
+                " text:" + value_str.options[value_str.selectedIndex].text);
+        }
+
+    </script>
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -275,8 +290,8 @@
         <h1 class="input-container">베이스 선택</h1>
         <div class="input-container">
             <label class=" input-containers-text" for="inputGroupselect01"></label>
-            <select name="Base_select" class="form-select" aria-label="Large select example">
-                <option selected>베이스 선택</option>
+            <select class="form-control" name="user_type" id="base_value" onchange="ChangeValue_name()">
+                <option value="">베이스를 선택해주세요</option>
                 <option value="Rum">럼</option>
                 <option value="Whiskey">위스키</option>
                 <option value="Jin">진</option>
@@ -289,23 +304,20 @@
         <h1 class="input-container">도수 선택</h1>
         <div class="input-container">
             <label class=" input-containers-text" for="inputGroupselect02"></label>
-            <select name="alcohol_degree" class="form-select" onChange="Base_value(this.value)">
-                <option selected>도수 선택</option>
-                <option value="1">10도 이하</option>
-                <option value="2">10도 ~ 20도</option>
-                <option value="3">20도 ~ 30도</option>
-                <option value="4">30도 ~ 40도</option>
-                <option value="5">40도 이상</option>
+            <select class="form-control" name="degree" id="degree_value" onchange="ChangeValue_name()">
+                <option value="" disabled selected>도수를 선택해주세요</option>
+                <option value="10">10도 이하</option>
+                <option value="20">10도 ~ 20도</option>
+                <option value="30">20도 ~ 30도</option>
+                <option value="40">30도 ~ 40도</option>
+                <option value="50">40도 이상</option>
             </select>
         </div>
         <h1 class="input-container">이름 선택</h1>
         <div class="input-container">
             <label class=" input-containers-text" for="inputGroupselect03"></label>
-            <select class="form-select">
-                <option selected>이름 선택</option>
-                <option value="1">이름1</option>
-                <option value="2">이름2</option>
-                <option value="3">이름3</option>
+            <select class="form-control" name="type" id="result_option">
+                <option value="">베이스와 도수를 선택해주세요</option>
             </select>
         </div>
 
