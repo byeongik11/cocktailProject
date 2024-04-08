@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,126 +10,129 @@
     <title>칵테일 기록하기</title>
 </head>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Stylish&display=swap');
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Stylish&display=swap');
 
-        * {
-            font-family: 'Gowun Dodum';
-        }
+    * {
+        font-family: 'Gowun Dodum';
+    }
 
-        .main {
-            background-color: green;
-            color: white;
+    .main {
+        background-color: green;
+        color: white;
 
-            background-image: url('https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YmFyfGVufDB8fDB8fHww');
-            background-position: center;
-            background-size: cover;
-        }
+        background-image: url('https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YmFyfGVufDB8fDB8fHww');
+        background-position: center;
+        background-size: cover;
+    }
 
-        body {
-            background-color: black;
-        }
+    body {
+        background-color: black;
+    }
 
-        .mycards {
-            width: 1200px;
-            margin: 20px auto 20px auto;
-        }
+    .mycards {
+        width: 1200px;
+        margin: 20px auto 20px auto;
+    }
 
-        .mypostingbox {
-            width: 500px;
-            margin: 20px auto 20px auto;
+    .mypostingbox {
+        width: 500px;
+        margin: 20px auto 20px auto;
 
-            border: 1px solid white;
-            padding: 20px;
-            border-radius: 5px;
-        }
+        border: 1px solid white;
+        padding: 20px;
+        border-radius: 5px;
+    }
 
-        .form-floating>input {
-            background-color: transparent;
-            color: white;
-        }
+    .form-floating>input {
+        background-color: transparent;
+        color: white;
+    }
 
-        .form-floating>label {
-            color: white;
-        }
+    .form-floating>label {
+        color: white;
+    }
 
-        .input-group>label {
-            background-color: transparent;
-            color: white;
-        }
+    .input-group>label {
+        background-color: transparent;
+        color: white;
+    }
 
-        .mypostingbox>button {
-            width: 100%;
-        }
-    </style>
-    <script type="module">
-       // Firebase SDK 라이브러리 가져오기
-       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-        import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-        import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-        import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    .mypostingbox>button {
+        width: 100%;
+    }
+</style>
+<script type="module">
+    // Firebase SDK 라이브러리 가져오기
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
 
-        // Firebase 구성 정보 설정
-        const firebaseConfig = {
-            apiKey: "AIzaSyD1fYXsRHwmDjA71TDfKAKesh-l0OXG6WI",
-            authDomain: "cocktailproject-63c89.firebaseapp.com",
-            projectId: "cocktailproject-63c89",
-            storageBucket: "cocktailproject-63c89.appspot.com",
-            messagingSenderId: "808218130995",
-            appId: "1:808218130995:web:648f7b42ea9556a8a80146",
-            measurementId: "G-JPECC8887X"
+    // Firebase 구성 정보 설정
+    const firebaseConfig = {
+        apiKey: "AIzaSyD1fYXsRHwmDjA71TDfKAKesh-l0OXG6WI",
+        authDomain: "cocktailproject-63c89.firebaseapp.com",
+        projectId: "cocktailproject-63c89",
+        storageBucket: "cocktailproject-63c89.appspot.com",
+        messagingSenderId: "808218130995",
+        appId: "1:808218130995:web:648f7b42ea9556a8a80146",
+        measurementId: "G-JPECC8887X"
+    };
+
+
+    // Firebase 인스턴스 초기화
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    //저장하기
+    $("#postingbtn").click(async function () {
+        let cimage = $('#cimage').val();
+        let cnmae = $('#cnmae').val();
+        let base = $('#base').val();
+        let ingredient = $('#ingredient').val();
+        let taste = $('#taste').val();
+        let recipe = $('#recipe').val();
+
+        let doc = {
+            'cimage': cimage,
+            'cnmae': cnmae,
+            'base': base,
+            'ingredient': ingredient,
+            'taste': taste,
+            'recipe': recipe,
         };
+        await addDoc(collection(db, "cocktails"), doc);
+        alert('저장 완료!');
+        window.location.reload();
+    })
 
 
-        // Firebase 인스턴스 초기화
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-
-        //저장하기
-        $("#postingbtn").click(async function () {
-            let cimage = $('#cimage').val();
-            let cnmae = $('#cnmae').val();
-            let base = $('#base').val();
-            let ingredient = $('#ingredient').val();
-            let taste = $('#taste').val();
-            let recipe = $('#recipe').val();
-           
-            let doc = {
-                'cimage': cimage,
-                'cnmae': cnmae,
-                'base': base,
-                'ingredient': ingredient,
-                'taste': taste,
-                'recipe': recipe,
-            };
-            await addDoc(collection(db, "cocktails"), doc);
-            alert('저장 완료!');
-            window.location.reload();
-        })
+    //닐씨 받아오기
+    let url = "http://spartacodingclub.shop/sparta_api/weather/seoul";
+    fetch(url).then(res => res.json()).then(data => {
+        let temp = (data['temp']);
+        if (temp > 20) {
+            $('#temperature').text("더워요");
+        } else {
+            $('#temperature').text("추워요");
+        }
+    })
 
 
-        let url = "http://spartacodingclub.shop/sparta_api/weather/seoul";
-        fetch(url).then(res => res.json()).then(data => {
-            let temp = (data['temp']);
-            if (temp > 20) {
-                $('#temperature').text("더워요");
-            } else {
-                $('#temperature').text("추워요");
-            }
-         })
-
-         let docs = await getDocs(collection(db, "cocktails"));
-        docs.forEach((doc) => {
-            let row = doc.data();
-            let cimage = row['cimage']
-            let cnmae = row['cnmae']
-            let base = row['base']
-            let ingredient = row['ingredient']
-            let taste = row['taste']
-            let recipe = row['recipe']
-
-            let temp_html = `
+    //데이터 불러와서 변수에 저장하기
+    let docs = await getDocs(collection(db, "cocktails"));
+    docs.forEach((doc) => {
+        let row = doc.data();
+        let cimage = row['cimage']
+        let cnmae = row['cnmae']
+        let base = row['base']
+        let ingredient = row['ingredient']
+        let taste = row['taste']
+        let recipe = row['recipe']
+        // 저장된 변수 카드에 만들어 화면에 붙이기
+        let temp_html = `
             <div class="col">
                 <div class="card h-100">
                     <img src="${cimage}"
@@ -138,21 +142,34 @@
                     </div>
                 </div>
             </div>`;
-            $('#card').append(temp_html);
+        $('#card').append(temp_html);
+
+        let query = window.location.search.substr();
+
+       //가져온 데이터 반복문으로 하나하나 빼보기
+        docs.forEach((eachDoc) => {
+            let id = eachDoc.id
+            let which;
+            let num = row["num"];
+            if (num === query) {
+                which = id;
+            }
+        })
+    });
+
     
-        });
 
-        $("#savebtn").click(async function () {
-            $('#postingbox').toggle();
-        })
-       
-        $("#hidebtn").click(async function () {
-            $('#card').toggle();
-        })
+    $("#savebtn").click(async function () {
+        $('#postingbox').toggle();
+    })
 
-       
+    $("#hidebtn").click(async function () {
+        $('#card').toggle();
+    })
 
-    </script>
+
+
+</script>
 </head>
 
 <body>
@@ -185,7 +202,7 @@
                 <p class="col-md-8 fs-4">
                     운영자 페이지임</p>
                 <button id="savebtn" type="button" class="btn btn-outline-light">칵테일기록하기</button>
-                
+
             </div>
         </div>
     </div>
@@ -224,11 +241,12 @@
     </div>
     <div class="mycards">
         <div id="card" class="row row-cols-1 row-cols-md-6 g-4">
-        
-        
+
+
         </div>
     </div>
 
 
 </body>
+
 </html>
