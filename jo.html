@@ -8,12 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <style>
         .title {
+            font-family: "Black Han Sans", sans-serif;
             width: 100%;
             margin: 20px auto 0 auto;
             text-align: center;
@@ -40,13 +42,15 @@
         }
 
         .mycards {
+            font-family: "Black Han Sans", sans-serif;
             max-width: 1000px;
             text-align: left;
-            margin: 40px auto 100px auto;
+            margin: 40px auto 0 auto;
             display: flexbox;
             flex-wrap: wrap;
             justify-content: center;
         }
+
         .flex-wrap {
 
             font-family: 'Gowun Dodum', sans-serif;
@@ -64,8 +68,14 @@
         }
 
         .btn2 {
-            margin: 20px;
-            padding: 20px 20px;
+            font-family: "Black Han Sans", sans-serif;
+            max-width: 900px;
+            text-align: left;
+            margin: 0px 535px 100px auto;
+            display: flexbox;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px 20px;
             border: none;
             color: white;
         }
@@ -74,34 +84,132 @@
             margin-left: 210px;
             padding: 30px;
             width: 505px;
-            font-size: 15px;
+            font-size: 20px;
         }
 
         .btn-dark {
             margin-left: 210px;
             padding: 30px;
             width: 505px;
-            font-size: 15px;
+            font-size: 20px;
             border-radius: 60px;
         }
+
         .nav-item2 {
             font-size: 20px;
         }
+
+        .post {
+            display: none;
+            width: 400px;
+            margin: 10px 0px 1px 5px;
+            padding: 20px;
+            box-shadow: 0px 0px 3px 0px transparent;
+            background-color: transparent;
+            box-shadow: 0px 0px 3px 0px black;
+            border-radius: 30px;
+
+        }
+
+        .btn-danger {
+            margin: 10px;
+            width: 340px;
+        }
     </style>
-    <script>
-        $(document).ready(function () {
-            fetch("http://spartacodingclub.shop/sparta_api/weather/seoul")
-                .then(res => res.json()).then(data => {
-                    let temperature = data['temp']
-                    if (temperature < 20) {
-                        $('#dhseh').text('추워요');
-                    } else {
-                        $('#dhseh').text('더워요');
-                    }
-                })
+    <script type="module">
+        // Firebase SDK 라이브러리 가져오기
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { limit } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { query } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { orderBy } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyAB0gEXTGLiw2J7pFpjPtGliZ7aa7cppRM",
+            authDomain: "sparta-12911.firebaseapp.com",
+            projectId: "sparta-12911",
+            storageBucket: "sparta-12911.appspot.com",
+            messagingSenderId: "265395762264",
+            appId: "1:265395762264:web:4d014a777375ccad4d862d",
+            measurementId: "G-FLVL71MXQW"
+        };
+
+
+        // Firebase 인스턴스 초기화
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        $("#savebtn").click(async function () {
+            let image = $('#image').val();
+            let title = $('#title').val();
+            let point = $('#point').val();
+
+            let doc = {
+                'image': image,
+                'title': title,
+                'point': point,
+            };
+            await addDoc(collection(db, "cocktails"), doc);
+            alert('저장 완료!');
+            window.location.reload();
         })
 
 
+        let url = "http://spartacodingclub.shop/sparta_api/weather/seoul";
+        fetch(url).then(res => res.json()).then(data => {
+            let temp = (data['temp']);
+            if (temp > 20) {
+                $('#dhseh').text("더워요");
+            } else {
+                $('#dhseh').text("추워요");
+            }
+        })
+
+        const fetchRandomData = async () => {
+            const q = query(collection(db, "cocktails"));
+            const querySnapshot = await getDocs(q, { source: "server" });
+            const documents = [];
+            querySnapshot.forEach(doc => {
+                documents.push(doc);
+            });
+
+            shuffleArray(documents);
+
+            $('#card').empty();
+
+            documents.slice(0, 3).forEach(doc => {
+                let row = doc.data();
+                let image = row.image;
+                let title = row.title;
+                let point = row.point;
+
+                let temp_html = `
+            <div class="col">
+                <div class="card">
+                    <img src="${image}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${title}</h5>
+                        <p class="card-text">${point}</p>
+                    </div>
+                </div>
+            </div>`;
+                $('#card').append(temp_html);
+            });
+        };
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        fetchRandomData();
+
+        $(window).on('load', fetchRandomData);
     </script>
 
 
@@ -110,7 +218,8 @@
 <body>
     <div class="container d-flex flex-wrap">
         <ul class="nav me-auto">
-            <li class="nav-item2"><a href="jo.html" class="nav-link link-secondary link-body-emphasis px-2 active" aria-current="page">한잔해</a>
+            <li class="nav-item2"><a href="jo.html" class="nav-link link-secondary link-body-emphasis px-2 active"
+                    aria-current="page">한잔해</a>
             </li>
             <li class="nav-item"><a href="teamintro.html" target="_blank" class="nav-link link-secondary link-body-emphasis px-2">팀소개</a></li>
             <li class="nav-item"><a href="cocktailList.html" target="_self" class="nav-link link-secondary link-body-emphasis px-2">리스트</a></li>
@@ -118,7 +227,8 @@
         </ul>
         <ul class="nav">
             <li class="nav-item">
-            <li class="nav-item"><a class="nav-link link-secondary link-body-emphasis px-2">현재 서울의 날씨 : <span id="dhseh"></span></a>
+            <li class="nav-item"><a class="nav-link link-secondary link-body-emphasis px-2">현재 서울의 날씨 : <span
+                        id="dhseh"></span></a>
             </li>
             </li>
         </ul>
@@ -129,45 +239,43 @@
                 <h1 class="display-5 fw-bold">칵테일 조합</h1>
                 <p class="col-md-8 fs-4" U>오늘의 추천 레시피 찾기 <button type="button"
                         class="btn btn-outline-light">BUTTON</button></p>
+                <div class="post" id="input-card">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="image" placeholder="name@example.com">
+                        <label for="floatingInput" style="color: black;">칵테일 이미지 </label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="title" placeholder="영화 제목">
+                        <label for="foodTitle" style="color: black;">칵테일 이름</label>
+                    </div>
+                    <div class="input-group mb-3">
+                        <button class="btn btn-outline-secondary" type="button">도수</button>
+                        <select class="form-select" id="point" aria-label="Example select with button addon">
+                            <option selected>도수 선택</option>
+                            <option value="🍷">🍷</option>
+                            <option value="🍷🍷">🍷🍷</option>
+                            <option value="🍷🍷🍷">🍷🍷🍷</option>
+                            <option value="🍷🍷🍷🍷">🍷🍷🍷🍷</option>
+                            <option value="🍷🍷🍷🍷🍷">🍷🍷🍷🍷🍷</option>
+                        </select>
+                    </div>
+                    <div class="button2">
+                        <button id="savebtn" type="button" class="btn btn-danger"> 저장하기 </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <h3 class="title">오늘의 추천 칵테일</h3>
+    <h3 class="title">오늘의 추천 칵테일<p>🍷=도수</p></h3>
     <div class="mycards">
-        <div class="row row-cols-1 row-cols-md-3 g-3">
-            <div class="col">
-                <div class="card">
-                    <img src="https://ifh.cc/g/RdVp9Y.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">칵테일 이름</h5>
-                        <p class="card-text">한줄평</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="https://ifh.cc/g/X56KQG.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">칵테일 이름</h5>
-                        <p class="card-text">한줄평</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="https://ifh.cc/g/X3onD7.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">칵테일 이름</h5>
-                        <p class="card-text">한줄평</p>
-                    </div>
-                </div>
-            </div>
+        <div id="card" class="row row-cols-1 row-cols-md-3 g-3">
         </div>
-        <div class="btn2">
-            <p><a href="kim.html" type="button" class="btn btn-primary">칵테일 만들기</button></a></p>
-            <p><a href="cocktailList.html" type="button" class="btn btn-dark">전체 칵테일 보기</button></a></p>
-        </div>
+    </div>
+    <div class="btn2">
+        <p><a href="kim.html" type="button" class="btn btn-primary">칵테일 만들기</button></a></p>
+        <p><a href="cocktailList.html" type="button" class="btn btn-dark">전체 칵테일 보기</button></a></p>
+    </div>
 </body>
 
 </html>
