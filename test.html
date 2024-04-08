@@ -16,11 +16,9 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="test.js"></script>
-    <script src="common.js"></script>
+    <script src="Change_Name.js"></script>
 
 </head>
-
 
 
 <body>
@@ -48,89 +46,28 @@
         const app = initializeApp(firebaseConfig);
         const dbs = getFirestore(app);
 
-        //데이터 읽기
+        // 데이터 읽기
         let docs = await getDocs(collection(dbs, "cocktails"));
+        let outputDiv = document.getElementById("result");
+
         docs.forEach((doc) => {
             let row = doc.data();
-            console.log(row);
+            // 화면에 데이터를 표시하기 위해 HTML 요소 생성
+            let cocktailDiv = document.createElement("div");
+            cocktailDiv.textContent = JSON.stringify(row);
+            outputDiv.appendChild(cocktailDiv);
         });
 
 
-    </script>
-
-    <script>
-<!--        function ChangeValue_base() {
-            var value_str = document.getElementById('base_value');
-
-            alert("value:" + value_str.options[value_str.selectedIndex].value +
-                " text:" + value_str.options[value_str.selectedIndex].text);
-        }
-
-        function ChangeValue_degree() {
-            var value_str = document.getElementById('degree_value');
-
-            alert("value:" + value_str.options[value_str.selectedIndex].value +
-                " text:" + value_str.options[value_str.selectedIndex].text);
-        }
-    -->
-        function getName() {
-            var obj = {
-                "럼": {
-
-                },
-                "위스키": {
-
-                },
-                "진": {
-
-                },
-                "보드카": {
-
-                },
-                "데킬라": {
-
-                },
-                "브랜디": {
-
-                },
-                "소주": {
-
-                }
-
-            }
-            return obj;
-        }
 
     </script>
 
- <!--   <div class="box-body">
-        <h5>물품</h5>
-        <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-building"></i></span>
-            <select class="form-control" name="user_type">
-                <option value="">선택</option>
-                <option value="과일">과일</option>
-                <option value="생선">생선</option>
-            </select>
-        </div>
-        <h5>종류</h5>
-        <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-building"></i></span>
-            <select class="form-control" name="type">
-                <option value="">선택</option>
-            </select>
-        </div>
-    </div>
-
-    </div>
-    -->
-
-    <div class="box-body">
-        <h5>물품</h5>
-        <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-building"></i></span>
+    <div class="inputmain">
+        <h1 class="input-container">베이스 선택</h1>
+        <div class="input-container">
+            <label class=" input-containers-text" for="inputGroupselect01"></label>
             <select class="form-control" name="user_type" id="base_value" onchange="ChangeValue_name()">
-                <option value="" disabled selected>베이스를 선택해주세요</option>
+                <option value="">베이스를 선택해주세요</option>
                 <option value="Rum">럼</option>
                 <option value="Whiskey">위스키</option>
                 <option value="Jin">진</option>
@@ -140,9 +77,9 @@
                 <option value="Soju">소주</option>
             </select>
         </div>
-        <h5>도수</h5>
-        <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-building"></i></span>
+        <h1 class="input-container">도수 선택</h1>
+        <div class="input-container">
+            <label class=" input-containers-text" for="inputGroupselect02"></label>
             <select class="form-control" name="degree" id="degree_value" onchange="ChangeValue_name()">
                 <option value="" disabled selected>도수를 선택해주세요</option>
                 <option value="10">10도 이하</option>
@@ -152,15 +89,16 @@
                 <option value="50">40도 이상</option>
             </select>
         </div>
-        <h5>종류</h5>
-        <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-building"></i></span>
+        <h1 class="input-container">이름 선택</h1>
+        <div class="input-container">
+            <label class=" input-containers-text" for="inputGroupselect03"></label>
             <select class="form-control" name="type" id="result_option">
-                <option value="">선택</option>
+                <option value="">베이스와 도수를 선택해주세요</option>
             </select>
         </div>
     </div>
 
+    <div id="result"></div>
 </body>
 
 
